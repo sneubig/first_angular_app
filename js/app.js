@@ -2,15 +2,23 @@
 	var app = angular.module('theatre', [ ]);
 
 	app.controller('TheatreController', function(){
-		this.movie = gem;
+		this.movies = gems;
 
 	});
 
-	var gem = {
-		name: 'Dodgeball', 
-		rating: 5, 
-		description: 'The movie Dodgeball is about...'
-	};
+	var gems = [
+
+		{
+			name: 'Dodgeball', 
+			rating: 5, 
+			description: 'The movie Dodgeball is about...'
+		}, 
+		{
+			name: 'Wedding Crashers',
+			rating: 4, 
+			description: 'The movie Wedding Crashers is about...'
+		}
+	];
 
 	// app.controller('MovieController', function(){
 

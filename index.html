@@ -5,10 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
-	<div ng-controller="TheatreController as theatre">
-		<h1>{{theatre.movie.name}}</h1>
-		<p>{{theatre.movie.description}}</p>
+<body ng-controller="TheatreController as theatre">
+	<div ng-repeat="movie in theatre.movies">
+		<h1>{{movie.name}}</h1>
+		<p>{{movie.description}}</p>
 
 	</div>
 
