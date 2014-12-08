@@ -1,4 +1,4 @@
-<html ng-app="movie">
+<html ng-app="theatre">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -6,7 +6,11 @@
 </head>
 
 <body>
-	<div>Hello</div>
+	<div ng-controller="TheatreController as theatre">
+		<h1>{{theatre.movie.name}}</h1>
+		<p>{{theatre.movie.description}}</p>
+
+	</div>
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
