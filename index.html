@@ -14,9 +14,19 @@
 
 	<section>
 		<ul class="nav nav-pills">
-			<li> <a href="description"> Description </a> </li>
-			<li> <a href="reviews"> Reviews </a> </li>
+			<li> <a href ng-click="tab = 1"> Description </a> </li>
+			<li> <a href ng-click="tab = 2"> Reviews </a> </li>
 		</ul>
+
+		<div class="panel" ng-show="tab === 1">
+			<h4>Description</h4>
+			<p>{{movie.description}}</p>
+		</div>
+
+		<div class="panel" ng-show="tab === 2">
+			<h4>Reviews</h4>
+			<blockquote>None Yet</blockquote>
+		</div>
 
 	</section>
 
