@@ -22,8 +22,8 @@
 
 		this.addReview = function(movie){
 			movie.reviews.push(this.review);
-			this.review = {};
-		};
+			this.review = {}
+		}
 	});
 
 	var gems = [
