@@ -1,0 +1,54 @@
+<section ng-init="tab = 1">
+	<ul class="nav nav-pills">
+		<li ng-class="{ active:panel.isSelected(1) }"> 
+			<a href ng-click="panel.selectTab(1)"> Description </a> 
+		</li>
+		
+		<li ng-class="{ active:panel.isSelected(2) }"> 
+			<a href ng-click="panel.selectTab(2)"> Reviews </a> 
+		</li>
+	</ul>
+
+	<div class="panel" ng-show="panel.isSelected(1)">
+		<h5>Description</h5>
+		<p>{{movie.description}}</p>
+	</div>
+
+	<div class="panel" ng-show="panel.isSelected(2)">
+		<h5>Reviews</h5>
+
+		<blockquote ng-repeat="review in movie.reviews">
+			<b>Stars: {{review.stars}}</b>
+			<p> {{review.body}} </p>
+			<cite>by: {{review.author}} </cite>
+		</blockquote>
+
+		<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(movie)" novalidate>
+			
+			<blockquote>
+				<b>Stars: {{reviewCtrl.review.stars}}</b>
+				<p> {{reviewCtrl.review.body}} </p>
+				<cite>by: {{reviewCtrl.review.author}} </cite>
+			</blockquote>
+
+			<select ng-model="reviewCtrl.review.stars" required>
+				<option value="1"> 1 star </option>
+				<option value="2"> 2 stars </option>
+				<option value="3"> 3 stars </option>
+				<option value="4"> 4 stars </option>
+				<option value="5"> 5 stars </option>
+			</select>
+
+			<br>
+
+			<textarea ng-model="reviewCtrl.review.body" required></textarea>
+
+			<br>
+
+			<input ng-model="reviewCtrl.review.author" type="email" required></input>
+			<input type="submit" value="Submit"></input>
+		</form>
+
+	</div>
+
+</section>
